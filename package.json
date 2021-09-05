@@ -1,0 +1,40 @@
+{
+  "name": "vite-plugin-loading-indicator",
+  "version": "1.0.0",
+  "description": "Loading indicator plugin for Vite",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "private": false,
+  "keywords": [
+    "vite",
+    "plugin",
+    "loading",
+    "indicator"
+  ],
+  "files": [
+    "dist"
+  ],
+  "author": "xh4528 <x115136438@126.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/xh4528/vite-plugin-loading-indicator"
+  },
+  "homepage": "https://github.com/xh4528/vite-plugin-loading-indicator",
+  "bugs": "https://github.com/xh4528/vite-plugin-loading-indicator/issues",
+  "scripts": {
+    "dev": "yarn build -- --watch --ignore-watch examples",
+    "build": "yarn clear &&  tsup src/index.ts --dts --format cjs,esm --no-splitting && yarn copy",
+    "copy": "cp -rf ./src/loading ./dist/loading",
+    "clear": "rm -rf ./dist"
+  },
+  "devDependencies": {
+    "@types/fs-extra": "^9.0.12",
+    "@types/node": "^16.7.10",
+    "chalk": "^4.1.2",
+    "tsup": "^4.14.0",
+    "typescript": "^4.4.2",
+    "fs-extra": "^10.0.0"
+  }
+}
