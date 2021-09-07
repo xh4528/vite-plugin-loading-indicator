@@ -24,8 +24,9 @@
   "homepage": "https://github.com/xh4528/vite-plugin-loading-indicator",
   "bugs": "https://github.com/xh4528/vite-plugin-loading-indicator/issues",
   "scripts": {
-    "dev": "yarn build -- --watch --ignore-watch examples",
-    "build": "yarn clear &&  tsup src/index.ts --dts --format cjs,esm --no-splitting && yarn copy",
+    "dev": "yarn generate -- --watch --ignore-watch examples",
+    "build": "yarn clear && yarn generate && yarn copy",
+    "generate": "tsup src/index.ts --dts --format cjs,esm --no-splitting",
     "copy": "cp -rf ./src/loading ./dist/loading",
     "clear": "rm -rf ./dist"
   },
